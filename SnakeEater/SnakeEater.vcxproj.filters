@@ -38,6 +38,12 @@
     <ClInclude Include="Defines.h">
       <Filter>Snake</Filter>
     </ClInclude>
+    <ClInclude Include="PathFinder.h">
+      <Filter>Snake</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Snake</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -56,6 +62,9 @@
       <Filter>Snake</Filter>
     </ClCompile>
     <ClCompile Include="FloodFill.cpp">
+      <Filter>Snake</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFinder.cpp">
       <Filter>Snake</Filter>
     </ClCompile>
   </ItemGroup>

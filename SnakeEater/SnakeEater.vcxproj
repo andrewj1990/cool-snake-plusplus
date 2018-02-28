@@ -150,6 +150,8 @@
     <ClInclude Include="Defines.h" />
     <ClInclude Include="FloodFill.h" />
     <ClInclude Include="HttpRequests.h" />
+    <ClInclude Include="PathFinder.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -158,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="FloodFill.cpp" />
     <ClCompile Include="HttpRequests.cpp" />
+    <ClCompile Include="PathFinder.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeEater.cpp" />
     <ClCompile Include="stdafx.cpp">

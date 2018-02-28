@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "FloodFill.h"
+#include "Utils.h"
 
 
 int FloodFill::Flood(int row, int col, const BoardMatrix& board)
@@ -34,18 +35,9 @@ int FloodFill::Flood(int row, int col, const BoardMatrix& board)
     return count;
 }
 
-bool FloodFill::IsValidPosition(int row, int col, const BoardMatrix& board)
-{
-    if (row >= 0 && row < static_cast<int>(board.size()))
-        if (col >= 0 && col < static_cast<int>(board.front().size()))
-            return true;
-
-    return false;
-}
-
 bool FloodFill::IsVisited(int row, int col, const BoardMatrix& visited)
 {
-    if (IsValidPosition(row, col, visited))
+    if (Utils::IsValidPosition(row, col, visited))
     {
         return (visited[row][col] != 0);
     }
