@@ -12,5 +12,5 @@ bool Utils::IsValidPosition(int row, int col, const BoardMatrix& board)
 
 bool Utils::IsValidPosition(const Node& node, const BoardMatrix& board)
 {
-    return IsValidPosition(node.x, node.y, board);
+    return IsValidPosition(node.y, node.x, board);
 }
