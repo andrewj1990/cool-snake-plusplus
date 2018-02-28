@@ -44,7 +44,7 @@ Node PathFinder::AStar(const Node& start, const Node& end, const BoardMatrix& bo
                 int dy2 = start.y - end.y;
                 int cross = std::abs(dx1 * dy2 - dx2 * dy1);
 
-                int priority = newCost + Heuristic(next, start);
+                int priority = newCost + Heuristic(next, start) * cross;
                 frontier.emplace(priority, next);
                 cameFrom[next] = current;
             }
