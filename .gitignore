@@ -41,3 +41,6 @@
 *.log
 *.tlog
 *.lastbuildstate
+
+# misc
+/.vs/SnakeEater/v15/*.suo

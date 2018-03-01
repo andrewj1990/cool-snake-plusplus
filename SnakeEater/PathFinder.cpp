@@ -33,16 +33,16 @@ Node PathFinder::AStar(const Node& start, const Node& end, const BoardMatrix& bo
         std::vector<Node> neighbors = GetNeighbors(current, board);
         for (const Node& next : neighbors)
         {
-            int newCost = costSoFar[current] + (board[next.y][next.x] * 500);
+            int newCost = costSoFar[current] + (board[next.y][next.x] * 5000) + 10;
             if (costSoFar.find(next) == costSoFar.end() || newCost < costSoFar[next])
             {
                 costSoFar[next] = newCost;
 
-                int dx1 = next.x - end.x;
-                int dy1 = next.y - end.y;
-                int dx2 = start.x - end.x;
-                int dy2 = start.y - end.y;
-                int cross = std::abs(dx1 * dy2 - dx2 * dy1);
+                int dx1 = next.x - start.x;
+                int dy1 = next.y - start.y;
+                int dx2 = end.x - start.x;
+                int dy2 = end.y - start.y;
+                int cross = static_cast<int>(std::abs(dx1 * dy2 - dx2 * dy1) * 0.0001);
 
                 int priority = newCost + Heuristic(next, start) * cross;
                 frontier.emplace(priority, next);
@@ -51,6 +51,30 @@ Node PathFinder::AStar(const Node& start, const Node& end, const BoardMatrix& bo
         }
     }
 
+
+#if 0
+    auto tempBoard(board);
+
+    Node v(start);
+    while (1)
+    {
+        if (v == end)
+            break;
+        Node n = cameFrom[v];
+        tempBoard[n.y][n.x] = 7;
+        v = n;
+    }
+
+    for (const auto& row : tempBoard)
+    {
+        for (const int col : row)
+        {
+            std::cout << col << " ";
+        }
+        std::cout << "\n";
+    }
+    std::cout << "\n";
+#endif
 
     return cameFrom[start];
 }
