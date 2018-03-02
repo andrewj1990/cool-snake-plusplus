@@ -44,6 +44,9 @@
     <ClInclude Include="Node.h">
       <Filter>Snake</Filter>
     </ClInclude>
+    <ClInclude Include="Server.h">
+      <Filter>Http</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -66,6 +69,9 @@
     </ClCompile>
     <ClCompile Include="PathFinder.cpp">
       <Filter>Snake</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Http</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
